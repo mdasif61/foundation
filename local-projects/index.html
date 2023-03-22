@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/be89908d6a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <header class="w-full my-2 bg-gray-700">
+        <nav class="w-9/12 mx-auto">
+            <div class="navbar z-50	">
+                <div class="flex-1">
+                  <a class="btn btn-ghost normal-case text-xl">AKF</a>
+                </div>
+                <div class="flex-none gap-2">
+                    <div class="mr-5">
+                        <ul class="flex cursor-pointer">
+                            <li class="mx-3 hover:underline">Home</li>
+                            <li class="mx-3 hover:underline">Blog</li>
+                            <li class="mx-3 hover:underline">Contact</li>
+                            <li class="mx-3 hover:underline">About</li>
+                        </ul>
+                    </div>
+                  <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                      <div class="w-10 rounded-full">
+                        <img src="./images/akf.jpg" />
+                      </div>
+                    </label>
+                    <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-gray-700 text-white rounded-box w-52">
+                      <li>
+                        <a class="justify-between">
+                          Profile
+                          <span class="badge">New</span>
+                        </a>
+                      </li>
+                      <li><a>Settings</a></li>
+                      <li onclick="showBtn()"><a href="#history-con">History</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        </nav>
+    </header>
+
+    <main class="md:w-9/12 w-full mx-auto flex items-center justify-center h-screen">
+        <section id="info-con" class="w-full flex flex-col items-center justify-center">
+            <label class="w-[400px] ml-4 font-semibold mb-1 text-white" for="name">Name</label>
+            <input class="w-[400px] rounded-full h-8 px-3 focus:outline-none focus:bg-gray-300 focus:text-black text-gray-200 font-semibold mb-2" type="text" name="" id="name" placeholder="Enter Name">
+
+            <label class="w-[400px] ml-4 font-semibold mb-1 text-white" for="address">Address</label>
+            <input class="w-[400px] rounded-full h-8 px-3 focus:outline-none focus:bg-gray-300 focus:text-black text-gray-200 font-semibold mb-2" type="text" name="" id="address" placeholder="Address">
+
+            <label class="w-[400px] ml-4 font-semibold mb-1 text-white" for="fee">Mounthly Fee</label>
+            <input class="w-[400px] rounded-full h-8 px-3 focus:outline-none focus:bg-gray-300 focus:text-black text-gray-200 font-semibold mb-2" type="text" name="" id="mounthlyFee" placeholder="Mounthly Fee">
+
+            <label class="w-[400px] ml-4 font-semibold mb-1 text-white" for="fund">Islamic Fund Fee</label>
+            <input class="w-[400px] rounded-full h-8 px-3 focus:outline-none focus:bg-gray-300 focus:text-black text-gray-200 font-semibold mb-2" type="text" name="" id="fundFee" placeholder="Islamic Fund Fee">
+
+            <label class="w-[400px] ml-4 font-semibold mb-1 text-white" for="fine">Fine</label>
+            <input class="w-[400px] rounded-full h-8 px-3 focus:outline-none focus:bg-gray-300 focus:text-black text-gray-200 font-semibold mb-2" type="text" name="" id="fine" placeholder="Fine">
+
+            <label class="w-[400px] ml-4 font-semibold mb-1 text-white" for="date">Date</label>
+            <input class="w-[400px] rounded-full h-8 px-3 focus:outline-none focus:bg-gray-300 focus:text-black text-gray-200 font-semibold mb-2" type="date" name="" id="date">
+
+            <button id="sendBtn" class="btn rounded-full btn-success w-[400px] my-3 font-bold text-lg hover:bg-emerald-600 border-none">Send</button>
+        </section>
+
+        <section id="history-con" class="w-full hidden items-center justify-center">
+            <div id="history" class="text-center">
+                <table class="table" id="tables">
+                    <thead>
+                        <tr>
+                            <th>Sl.No</th>
+                            <th>Name</th>
+                            <th>Mounthly Fee</th>
+                            <th>Fund Fee</th>
+                            <th>Fine</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <button onclick="back()" class="btn btn-primary">Back</button>
+            </div>
+            
+        </section>
+
+        <section id="success" class="fixed hidden top-0 bg-base-100 bg-opacity-75 flex items-center justify-center w-full h-screen">
+            <div class="w-[250px] p-5 success bg-white flex flex-col items-center justify-center rounded-box">
+                <i class="fa-solid fa-circle-check text-5xl text-green-500"></i>
+                <h2 class="my-4 text-green-500 text-2xl font-bold">Submit Success!</h2>
+                <a href="https://www.facebook.com/AlorkafelaF?mibextid=ZbWKwL" target="_blank" class="text-gray-600 hover:underline hover:text-orange-500 mb-2">Alor Kafela Foundation</a>
+                <button onclick="ok()" class="btn btn-primary w-9/12">Ok</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+</body>
+</html>
