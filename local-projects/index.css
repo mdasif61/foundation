@@ -13,3 +13,26 @@
         transform: scale(1);
     }
 }
+.infoDiv{
+    -ms-overflow-style: none;
+    scrollbar-width: 0;
+}
+.infoDiv::-webkit-scrollbar{
+    display: none;
+}
+#modalImg{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    transition: 0.1s;
+}
+#modalImg:hover{
+    transform: scale(0.9);
+    border:7px solid rgba(0, 0, 0, 0.205);
+}
+.modalParent{
+    display: flex;
+    gap:20px;
+    align-items: center;
+    justify-content: flex-start;
+}

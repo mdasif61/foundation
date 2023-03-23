@@ -12,7 +12,7 @@
 <body>
     
     <header class="w-full my-2 bg-gray-700">
-        <nav class="w-9/12 mx-auto">
+        <nav class=" md:w-9/12 w-full mx-auto">
             <div class="navbar z-50	">
                 <div class="flex-1">
                   <a class="btn btn-ghost normal-case text-xl">AKF</a>
@@ -71,10 +71,10 @@
             <button id="sendBtn" class="btn rounded-full btn-success w-[400px] my-3 font-bold text-lg hover:bg-emerald-600 border-none">Send</button>
         </section>
 
-        <section id="history-con" class="w-full hidden items-center justify-center">
-            <div id="history" class="text-center">
-                <table class="table" id="tables">
-                    <thead>
+        <section id="history-con" class="w-full p-10 rounded-box hidden items-center justify-center flex-col">
+            <div id="history" class="text-center w-full h-[350px] p-5 infoDiv">
+                <table class="table w-full text-center" id="tables">
+                    <thead class="text-center">
                         <tr>
                             <th>Sl.No</th>
                             <th>Name</th>
@@ -86,11 +86,14 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                      
                     </tbody>
                 </table>
-                <button onclick="back()" class="btn btn-primary">Back</button>
             </div>
+            <di class="w-full flex items-center justify-center">
+              <button onclick="back()" class="btn btn-primary mx-2">Back</button>
+              <button onclick="clearAll()" class="btn btn-warning mx-2">Clear All</button>
+            </di>
             
         </section>
 
@@ -102,6 +105,41 @@
                 <button onclick="ok()" class="btn btn-primary w-9/12">Ok</button>
             </div>
         </section>
+
+        <div>
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box relative flex flex-col">
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <div class="modalParent">
+              <div>
+                <img id="modalImg" src="" alt="">
+              </div>
+              <div>
+                <h3 id="modalName" class="text-lg font-bold"></h3>
+                <p id="modalAddress" class="py-4"></p>
+              </div>
+            </div>
+
+            <div class="w-full my-3">
+              <table id="modalTable" class="table w-full">
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>Total</td>
+                    <td>Date</td>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        </div>
         
     </main>
 

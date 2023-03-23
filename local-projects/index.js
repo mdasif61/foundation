@@ -62,6 +62,12 @@ function info(){
     localStorage.setItem("info",JSON.stringify(data));
     displayShow()
     }
+    document.getElementById("name").value=""
+    document.getElementById("address").value=""
+    document.getElementById("mounthlyFee").value=""
+    document.getElementById("fundFee").value=""
+    document.getElementById("fine").value=""
+    document.getElementById("date").value=""
 }
 
 const ok=()=>{
@@ -80,7 +86,7 @@ function displayShow(){
         html+=`
         <tr>
             <td>${i+1}</td>
-            <td>${name}</td>
+            <td class="cursor-pointer"><label onclick="seeInfo(${id})" class="cursor-pointer" for="my-modal-3">${name}</label></td>
             <td>${mounthlyFee}</td>
             <td>${fundFee}</td>
             <td>${fine}</td>
@@ -112,6 +118,46 @@ const editBtn=(index)=>{
     const fine=allValue("fine");
     const date=allValue("date");
     
+}
+
+const photo=[
+    "./images/01.jpg",
+    "./images/02.jpg",
+    "./images/03.jpg",  
+]
+
+const seeInfo=(id)=>{
+    const local=JSON.parse(localStorage.getItem("info"));
+    const modalInfo=local.find(a=>a.id==id);
+    const modalName=document.getElementById("modalName").innerText=modalInfo.name;
+    const modalImg=document.getElementById("modalImg");
+    if(modalInfo.name.startsWith("Hossain")){
+        modalImg.setAttribute("src",photo[0]);
+    }else if(modalInfo.name.startsWith("Ikbal")){
+        modalImg.setAttribute("src",photo[1])
+    }else{
+        modalImg.removeAttribute("src")
+    }
+    const modalAddress=document.getElementById("modalAddress").innerText=modalInfo.address;
+    const modalTable=document.querySelector("#modalTable tbody");
+    modalTable.innerHTML=`
+    <tr>
+        <td>${modalInfo.name}</td>
+        <td>${modalInfo.address}</td>
+        <td>${modalInfo.date}</td>
+    </tr>
+    `
+}
+
+const clearAll=()=>{
+    const sure=confirm("are you sure?");
+    if(sure){
+        localStorage.clear();
+        location.reload();
+    }else{
+        return;
+    }
+    displayShow()
 }
 
 const showBtn=()=>{
